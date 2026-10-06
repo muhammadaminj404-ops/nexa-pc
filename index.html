@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXA PC — Kompyuterlar va komponentlar</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Leaflet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="top-bar">
+    <div>
+        <i data-lucide="truck"></i>
+        O‘zbekiston bo‘ylab yetkazib berish
+    </div>
+
+    <div>
+        <i data-lucide="shield-check"></i>
+        12 oylik kafolat
+    </div>
+
+    <div>
+        <i data-lucide="headphones"></i>
+        Har kuni 09:00 — 21:00
+    </div>
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="header" id="header">
+
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            <span class="logo-icon">
+                <i data-lucide="cpu"></i>
+            </span>
+
+            <span>
+                NEXA<span>PC</span>
+            </span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="#home">Bosh sahifa</a>
+            <a href="#catalog">Katalog</a>
+            <a href="#pcs">Kompyuterlar</a>
+            <a href="#components">Komponentlar</a>
+            <a href="#about">Biz haqimizda</a>
+            <a href="#contact">Aloqa</a>
+
+        </div>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn" id="wishlistBtn" title="Sevimlilar">
+                <i data-lucide="heart"></i>
+                <span class="counter" id="wishlistCount">0</span>
+            </button>
+
+            <button class="icon-btn" id="cartBtn" title="Savatcha">
+                <i data-lucide="shopping-cart"></i>
+                <span class="counter" id="cartCount">0</span>
+            </button>
+
+            <button class="menu-btn" id="menuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-content reveal">
+
+        <div class="hero-badge">
+            <span class="pulse"></span>
+            Yangi avlod texnologiyalari
+        </div>
+
+        <h1>
+            Kuchli kompyuter.
+            <span>Aqlli tanlov.</span>
+        </h1>
+
+        <p>
+            Gaming, ish, dasturlash va professional vazifalar uchun
+            zamonaviy kompyuterlar va sifatli komponentlar.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#catalog" class="btn btn-primary">
+                Katalogni ko‘rish
+                <i data-lucide="arrow-right"></i>
+            </a>
+
+            <a href="#builder" class="btn btn-outline">
+                Kompyuter yig‘ish
+                <i data-lucide="settings-2"></i>
+            </a>
+
+        </div>
+
+        <div class="hero-info">
+
+            <div>
+                <strong>500+</strong>
+                <span>Mahsulot</span>
+            </div>
+
+            <div>
+                <strong>4.9/5</strong>
+                <span>Mijozlar bahosi</span>
+            </div>
+
+            <div>
+                <strong>12 oy</strong>
+                <span>Kafolat</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual reveal">
+
+        <div class="glow"></div>
+
+        <div class="pc-image-card">
+
+            <div class="pc-top">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <img
+                src="https://images.unsplash.com/photo-1593640495253-23196b27a87f?auto=format&fit=crop&w=1000&q=85"
+                alt="Gaming PC"
+            >
+
+            <div class="pc-overlay">
+                <span>POWERED BY NEXA</span>
+                <strong>ULTIMATE GAMING</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BRANDS ================= -->
+
+<section class="brands-section">
+
+    <p>Ishonchli texnologiyalar</p>
+
+    <div class="brands">
+
+        <span>INTEL</span>
+        <span>AMD</span>
+        <span>NVIDIA</span>
+        <span>ASUS</span>
+        <span>MSI</span>
+        <span>GIGABYTE</span>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATALOG ================= -->
+
+<section class="section" id="catalog">
+
+    <div class="section-head reveal">
+
+        <div>
+            <span class="section-label">KATALOG</span>
+
+            <h2>
+                Sizga kerakli
+                <span>texnika</span>
+            </h2>
+
+            <p>
+                Kompyuterlar va barcha ichki komponentlarni bir joydan toping.
+            </p>
+        </div>
+
+        <div class="search-box">
+
+            <i data-lucide="search"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Mahsulot qidirish..."
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters reveal" id="filters">
+
+        <button class="filter active" data-category="all">
+            Barchasi
+        </button>
+
+        <button class="filter" data-category="pc">
+            Kompyuterlar
+        </button>
+
+        <button class="filter" data-category="cpu">
+            Protsessor
+        </button>
+
+        <button class="filter" data-category="gpu">
+            Videokarta
+        </button>
+
+        <button class="filter" data-category="ram">
+            RAM
+        </button>
+
+        <button class="filter" data-category="ssd">
+            SSD
+        </button>
+
+        <button class="filter" data-category="motherboard">
+            Motherboard
+        </button>
+
+        <button class="filter" data-category="psu">
+            Quvvat bloki
+        </button>
+
+        <button class="filter" data-category="cooling">
+            Sovutish
+        </button>
+
+        <button class="filter" data-category="case">
+            Korpus
+        </button>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <div class="product-grid" id="productGrid"></div>
+
+</section>
+
+
+<!-- ================= BUILDER ================= -->
+
+<section class="builder section" id="builder">
+
+    <div class="builder-content reveal">
+
+        <span class="section-label">PC BUILDER</span>
+
+        <h2>
+            O‘zingizga
+            <span>kompyuter yig‘ing</span>
+        </h2>
+
+        <p>
+            Kerakli komponentlarni tanlang va o‘zingizga mos konfiguratsiya
+            yarating.
+        </p>
+
+        <div class="builder-list">
+
+            <button class="builder-item">
+                <span>
+                    <i data-lucide="cpu"></i>
+                    Protsessor
+                </span>
+                <i data-lucide="chevron-right"></i>
+            </button>
+
+            <button class="builder-item">
+                <span>
+                    <i data-lucide="monitor"></i>
+                    Videokarta
+                </span>
+                <i data-lucide="chevron-right"></i>
+            </button>
+
+            <button class="builder-item">
+                <span>
+                    <i data-lucide="memory-stick"></i>
+                    Operativ xotira
+                </span>
+                <i data-lucide="chevron-right"></i>
+            </button>
+
+            <button class="builder-item">
+                <span>
+                    <i data-lucide="hard-drive"></i>
+                    SSD
+                </span>
+                <i data-lucide="chevron-right"></i>
+            </button>
+
+        </div>
+
+        <a href="#catalog" class="btn btn-primary">
+            Komponentlarni tanlash
+            <i data-lucide="arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="builder-card reveal">
+
+        <div class="builder-circle">
+            <i data-lucide="cpu"></i>
+        </div>
+
+        <span>YOUR PC</span>
+
+        <strong>BUILD</strong>
+
+        <div class="builder-line"></div>
+
+        <small>
+            Kuch • Tezlik • Ishonchlilik
+        </small>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COMPONENTS ================= -->
+
+<section class="section components" id="components">
+
+    <div class="center-head reveal">
+
+        <span class="section-label">KOMPONENTLAR</span>
+
+        <h2>
+            Har bir detal
+            <span>alohida</span>
+        </h2>
+
+        <p>
+            Kompyuteringiz uchun kerak bo‘ladigan barcha asosiy qismlar.
+        </p>
+
+    </div>
+
+    <div class="component-cards">
+
+        <div class="component-card reveal">
+            <div class="component-icon">
+                <i data-lucide="cpu"></i>
+            </div>
+            <h3>CPU</h3>
+            <p>Intel va AMD protsessorlari</p>
+            <a href="#catalog" data-jump-category="cpu">
+                Ko‘rish →
+            </a>
+        </div>
+
+        <div class="component-card reveal">
+            <div class="component-icon">
+                <i data-lucide="monitor"></i>
+            </div>
+            <h3>GPU</h3>
+            <p>NVIDIA va AMD videokartalari</p>
+            <a href="#catalog" data-jump-category="gpu">
+                Ko‘rish →
+            </a>
+        </div>
+
+        <div class="component-card reveal">
+            <div class="component-icon">
+                <i data-lucide="memory-stick"></i>
+            </div>
+            <h3>RAM</h3>
+            <p>DDR4 va DDR5 operativ xotira</p>
+            <a href="#catalog" data-jump-category="ram">
+                Ko‘rish →
+            </a>
+        </div>
+
+        <div class="component-card reveal">
+            <div class="component-icon">
+                <i data-lucide="hard-drive"></i>
+            </div>
+            <h3>SSD</h3>
+            <p>Tezkor NVMe va SATA disklar</p>
+            <a href="#catalog" data-jump-category="ssd">
+                Ko‘rish →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ADVANTAGES ================= -->
+
+<section class="advantages section">
+
+    <div class="center-head reveal">
+
+        <span class="section-label">NIMA UCHUN NEXA PC?</span>
+
+        <h2>
+            Biz bilan xarid qilish
+            <span>osonroq</span>
+        </h2>
+
+    </div>
+
+
+    <div class="advantages-grid">
+
+        <div class="advantage reveal">
+            <div class="advantage-icon">
+                <i data-lucide="shield-check"></i>
+            </div>
+
+            <h3>Kafolat</h3>
+
+            <p>
+                Mahsulotlarga rasmiy kafolat va texnik yordam.
+            </p>
+        </div>
+
+
+        <div class="advantage reveal">
+            <div class="advantage-icon">
+                <i data-lucide="zap"></i>
+            </div>
+
+            <h3>Tez yetkazish</h3>
+
+            <p>
+                Buyurtmalarni imkon qadar tez yetkazib beramiz.
+            </p>
+        </div>
+
+
+        <div class="advantage reveal">
+            <div class="advantage-icon">
+                <i data-lucide="headphones"></i>
+            </div>
+
+            <h3>Maslahat</h3>
+
+            <p>
+                Sizga mos konfiguratsiyani tanlashda yordam beramiz.
+            </p>
+        </div>
+
+
+        <div class="advantage reveal">
+            <div class="advantage-icon">
+                <i data-lucide="badge-check"></i>
+            </div>
+
+            <h3>Sifat</h3>
+
+            <p>
+                Ishonchli brendlar va tekshirilgan komponentlar.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+            <strong data-target="500">0</strong>
+            <span>Mahsulot</span>
+        </div>
+
+        <div class="stat">
+            <strong data-target="1200">0</strong>
+            <span>Mijozlar</span>
+        </div>
+
+        <div class="stat">
+            <strong data-target="98">0</strong>
+            <span>Qoniqish %</span>
+        </div>
+
+        <div class="stat">
+            <strong data-target="5">0</strong>
+            <span>Yillik tajriba</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about" id="about">
+
+    <div class="about-image reveal">
+
+        <img
+            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1000&q=85"
+            alt="PC setup"
+        >
+
+    </div>
+
+    <div class="about-content reveal">
+
+        <span class="section-label">BIZ HAQIMIZDA</span>
+
+        <h2>
+            Texnologiya —
+            <span>bizning ishtiyoqimiz.</span>
+        </h2>
+
+        <p>
+            NEXA PC — zamonaviy kompyuterlar va komponentlarni taklif
+            qiluvchi texnologik do‘kon konsepsiyasi.
+        </p>
+
+        <p>
+            Biz gaming, dasturlash, dizayn, ofis va professional
+            ishlarga mos konfiguratsiyalarni bir joyga jamlaymiz.
+        </p>
+
+        <div class="about-points">
+
+            <div>
+                <i data-lucide="check"></i>
+                Sifatli komponentlar
+            </div>
+
+            <div>
+                <i data-lucide="check"></i>
+                Professional maslahat
+            </div>
+
+            <div>
+                <i data-lucide="check"></i>
+                Kafolat xizmati
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section contact" id="contact">
+
+    <div class="center-head reveal">
+
+        <span class="section-label">ALOQA</span>
+
+        <h2>
+            Biz bilan
+            <span>bog‘laning</span>
+        </h2>
+
+        <p>
+            Savolingiz bormi? Bizga xabar yuboring.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <form class="contact-form reveal" id="contactForm">
+
+            <div class="input-group">
+                <label>Ismingiz</label>
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="Ismingizni kiriting"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label>Telefon</label>
+                <input
+                    type="tel"
+                    id="phoneInput"
+                    placeholder="+998 90 123 45 67"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label>Xabar</label>
+                <textarea
+                    id="messageInput"
+                    rows="5"
+                    placeholder="Xabaringiz..."
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary full">
+                Xabar yuborish
+                <i data-lucide="send"></i>
+            </button>
+
+        </form>
+
+
+        <div class="map-wrapper reveal">
+
+            <div id="map"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo">
+                <span class="logo-icon">
+                    <i data-lucide="cpu"></i>
+                </span>
+                NEXA<span>PC</span>
+            </a>
+
+            <p>
+                Kuchli kompyuterlar va zamonaviy texnologiyalar.
+            </p>
+
+            <div class="socials">
+
+                <a href="#">
+                    <i data-lucide="instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i data-lucide="send"></i>
+                </a>
+
+                <a href="#">
+                    <i data-lucide="youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Katalog</h4>
+
+            <a href="#catalog">Kompyuterlar</a>
+            <a href="#catalog">Protsessorlar</a>
+            <a href="#catalog">Videokartalar</a>
+            <a href="#catalog">RAM</a>
+            <a href="#catalog">SSD</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Yordam</h4>
+
+            <a href="#contact">Aloqa</a>
+            <a href="#about">Biz haqimizda</a>
+            <a href="#">Yetkazib berish</a>
+            <a href="#">Kafolat</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Aloqa</h4>
+
+            <p>
+                <i data-lucide="map-pin"></i>
+                Toshkent, Chilonzor
+            </p>
+
+            <p>
+                <i data-lucide="phone"></i>
+                +998 90 000 00 00
+            </p>
+
+            <p>
+                <i data-lucide="mail"></i>
+                info@nexapc.uz
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        <span>© 2026 NEXA PC. Barcha huquqlar himoyalangan.</span>
+        <span>Premium PC Store</span>
+    </div>
+
+</footer>
+
+
+<!-- ================= CART ================= -->
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+
+    <div class="drawer-head">
+
+        <div>
+            <span class="section-label">SAVATCHA</span>
+            <h3>Sizning buyurtmangiz</h3>
+        </div>
+
+        <button class="close-btn" id="closeCart">
+            <i data-lucide="x"></i>
+        </button>
+
+    </div>
+
+
+    <div class="cart-items" id="cartItems">
+
+        <div class="empty-cart">
+            <i data-lucide="shopping-cart"></i>
+            <p>Savatcha hozircha bo‘sh</p>
+        </div>
+
+    </div>
+
+
+    <div class="cart-bottom">
+
+        <div class="total-row">
+            <span>Jami:</span>
+            <strong id="cartTotal">0 so‘m</strong>
+        </div>
+
+        <button class="btn btn-primary full" id="checkoutBtn">
+            Buyurtma berish
+            <i data-lucide="arrow-right"></i>
+        </button>
+
+        <button class="clear-btn" id="clearCart">
+            Savatchani tozalash
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= WISHLIST ================= -->
+
+<div class="modal" id="wishlistModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" id="closeWishlist">
+            <i data-lucide="x"></i>
+        </button>
+
+        <span class="section-label">SEVIMLILAR</span>
+
+        <h2>Sevimli mahsulotlar</h2>
+
+        <div id="wishlistItems"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUICK VIEW ================= -->
+
+<div class="modal" id="quickViewModal">
+
+    <div class="modal-box product-modal">
+
+        <button class="modal-close" id="closeQuickView">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div id="quickViewContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast-container" id="toastContainer"></div>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
